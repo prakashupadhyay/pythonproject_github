@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <title>User Login</title>
 </head>
-<body>
-    <div style="margin: 50px auto; width: 300px; font-family: Arial, sans-serif;">
+<body style="font-family: Arial, sans-serif; display: flex; justify-content: center; margin-top: 50px;">
+    <div style="width: 300px; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
         <h2>Login Portal</h2>
+
+        <!-- Display error messages here -->
+        {% if messages %}
+            <div style="margin-bottom: 15px; padding: 10px; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 4px;">
+                {% for message in messages %}
+                    <p style="margin: 0;">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
         <form method="POST">
             {% csrf_token %}
             <label for="id_username">Username:</label><br>
@@ -17,6 +27,8 @@
             
             <button type="submit" style="width: 100%; padding: 10px; background-color: #007BFF; color: white; border: none; cursor: pointer;">Log In</button>
         </form>
+
+        <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
     </div>
 </body>
 </html>

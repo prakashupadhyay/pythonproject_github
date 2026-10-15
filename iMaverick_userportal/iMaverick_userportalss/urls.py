@@ -17,8 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.contrib.auth.views import LoginView
+from iMaverick_userportalss.views import login_view, failure_view, register_view, success_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', LoginView.as_view(template_name='login.html'), name='login'),
+    path('login/', login_view, name='login'),
+    path('success/', success_view, name='success'),
+    path('failure/', failure_view, name='failure'),
+    path('register/', register_view, name='register'),
 ]

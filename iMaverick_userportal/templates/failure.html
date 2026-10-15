@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Failed</title>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; margin-top: 100px;">
+    <h1 style="color: red;">Login Failed!</h1>
+    <p>Credentials not found for username: <strong>{{ username }}</strong></p>
+    <p>Please double-check your username and password, or create an account if you haven't already.</p>
+    <br>
+    <a href="{% url 'login' %}" style="padding: 10px 20px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 4px;">Back to sign in page</a>
+</html>
