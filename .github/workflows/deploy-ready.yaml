@@ -1,0 +1,23 @@
+name: Deploy to Ready Environment
+
+# Trigger this pipeline whenever code is pushed to 'sandbox'
+on:
+  push:
+    branches:
+      - sandbox
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Download your repository code onto the runner
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Add your custom deployment commands here
+      - name: Run deployment script
+        run: |
+          echo "Sandbox code updated! Deploying to the ready environment..."
+          # Replace this echo command with your actual deployment steps
+          # e.g., deploying to AWS, Vercel, a remote VPS via SSH, etc.
