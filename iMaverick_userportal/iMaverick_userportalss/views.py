@@ -21,7 +21,7 @@ def register_view(request):
                 signup_ip=request.META.get('REMOTE_ADDR')
             )
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created for {username}! Please, You can now log in.')
+            messages.success(request, f'Account created for {username}! Please, I will let you can now log in.')
             return redirect('login')
     else:
         form = UserCreationForm()
